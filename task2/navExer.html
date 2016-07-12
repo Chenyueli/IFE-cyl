@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>导航</title>
+    <style type="text/css">
+        #header{
+            background-color:#B3C3D2;
+            height: 70px;
+        }
+
+        #header.header-logo{
+            float: left;
+            padding-left: 20px;
+            padding-top: 20px;
+            margin-left: 20px;
+            border-left: 20px;
+        }
+        #header .header-logo img{
+            height: 70px;
+        }
+        #header .header-nav{
+            position:absolute;
+            top:0;
+            right:10px;
+            /*float: right;*/
+            height: 50px;
+            /*margin-top: -70px;*/
+            border:1px solid #ccc;
+
+        }
+        #header .header-nav li{
+            display: inline-block;
+            border:1px solid #ccc;
+            font-size:16px;
+            padding:5px;
+            margin:0 5px;
+        }
+        #header .header-nav a:link,#header .header-nav a:active{
+            text-decoration: none;
+            color: white;
+        }
+        #header .header-nav a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        #header .header-nav a:hover{
+            text-decoration: none;
+            color: #F1B4C3;
+        }
+        #header .header-nav a.active{
+            text-decoration: none;
+            color: gray;
+        }
+    </style>
+
+</head>
+<body>
+<!-- 页眉 -->
+<div id="header">
+    <div class="header-logo">
+        <img src="image/task2-ballet.png">
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li><a href="#">导航链接一</a></li>
+            <li><a href="#">导航链接二</a></li>
+            <li><a href="#">导航链接三</a></li>
+            <li><a href="#">导航链接四</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
