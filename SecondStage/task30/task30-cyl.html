@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<form id="log-in">
+			<div><label>名称</label><input id="nameIn" type="text" name="username">
+				<p class="tips"></p>
+			</div>
+			<div><label>密码</label><input id="passWord" type="text" name="password">
+				<p class="tips"></p>
+			</div>
+			<div><label>密码确认</label><input id="confirm" type="text" name="confirm">
+				<p class="tips"></p>
+			</div>
+			<div><label>邮箱</label><input id="mail" type="text" name="mail">
+				<p class="tips"></p>
+			</div>
+			<div><label>手机</label><input id="phone" type="text" name="phone">
+				<p class="tips"></p>
+			</div>
+			<div><input type="button" id="submit" value="提交"></div>
+		</form>
+		<script>
+			var form = document.getElementById("log-in");
+
+			//单个输入验证绑定
+			var input = document.getElementsByTagName("input");
+			for(var i = 0, len = input.length; i < len; i++) {
+				input[i].addEventListener("focus", showRules, false);
+				input[i].addEventListener("blur", validateOne, false);
+			}
+
+			//全局输入验证绑定
+			var sub = document.getElementById("submit");
+			sub.addEventListener("click", validateAll, false);
+
+			//表单获得焦点，规则提示
+			function showRules(e) {
+				var reminder = "";
+				console.log(e.target.id + "focus");
+				//				alert(e.target.id);
+				switch(e.target.id) {
+					case "nameIn":
+						reminder = "必填，长度为4-16个字符";
+						break;
+					case "passWord":
+						reminder = "请输入8位密码，数字、字母、下划线";
+						break;
+					case "confirm":
+						reminder = "再次输入相同密码";
+						break;
+					case "mail":
+						reminder = "请输入您的邮箱";
+						break;
+					case "phone":
+						reminder = "请输入11位手机号码";
+				}
+				if(reminder !== "") {
+					e.target.nextElementSibling.innerHTML = reminder;
+				}
+			}
+			//表单失去焦点，显示验证结果
+			function validateOne(e) {
+				validateFn(e.target.id);
+			}
+
+			//点击提交按钮，全局校验，并弹窗显示校验结果
+			function validateAll() {
+				var isOk = true;
+				for(var i = 0, len = input.length; i < len - 1; i++) {
+					if(validateFn(input[i].id) === false) {
+						isOk = false;
+					}
+				}
+				if(isOk == true) {
+					alert("提交成功");
+				} else {
+					alert("提交失败");
+				}
+//				return isOk;
+			}
+
+			function validateFn(id) {
+				var tipsVal;
+				var isOk = true;
+				switch(id) {
+					case "nameIn":
+						tipsVal = "名称不能为空";
+						isOk = false;
+						break;
+					case "passWord":
+						tipsVal = "密码可用";
+						isOk = true;
+						break;
+					case "confirm":
+						tipsVal = "密码输入一致";
+						isOk = true;
+						break;
+					case "mail":
+						tipsVal = "邮箱格式错误";
+						isOk = false;
+						break;
+					case "phone":
+						tipsVal = "手机格式正确";
+						isOk = true;
+						break;
+				}
+				if(tipsVal !== "") {
+					document.getElementById(id).nextElementSibling.innerHTML = tipsVal;
+				}
+				return isOk;
+			}
+		</script>
+
+	</body>
+
+</html>

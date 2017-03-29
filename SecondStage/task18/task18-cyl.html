@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>丰富队列操作，实现一个排序算法的可视化呈现</title>
+		<style type="text/css">
+			label {
+				border: 1px solid gray;
+			}
+			
+			#btn {
+				display: inline-block;
+			}
+			
+			.show {
+				background-color: red;
+				display: inline-block; //内联元素设置纵向 padding/margin无效
+			}
+			
+			#display>span {
+				margin: 2px;
+				padding: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="text" id="input">
+		<div id="btn">
+			<label id="left-in">左侧入</label>
+			<label id="right-in">右侧入</label>
+			<label id="left-out">左侧出</label>
+			<label id="right-out">右侧出</label>
+		</div>
+		<div id="display">
+			<!--<span class="show">10</span>-->
+		</div>
+
+		<script>
+			/**
+			 * 添加函数
+			 * @param {Object} dir： 进入方向
+			 */
+			document.getElementById('input').focus();
+
+			function eventHandler(e) {
+				var id = e.target.id;
+				var dis = document.getElementById('display');
+				if(id === "left-in" | id === "right-in") {
+					var span = document.createElement('span');
+					var text = document.createTextNode(document.getElementById('input').value);
+					//对输入的text进行处理，得到字符串数组
+
+					
+					
+					span.appendChild(text);
+					span.className = "show";
+					
+					
+					if(id === "left-in") {
+						dis.insertBefore(span, dis.childNodes[0]);
+					} else {
+						dis.appendChild(span);
+					}
+				} else {
+//					alert(dis.childElementCount)
+					if(dis.childElementCount !== 0) {
+						if(id === "left-out") {
+							removeElement(dis.firstChild);
+						} else {
+							removeElement(dis.lastChild);
+						}
+					} else {
+						
+						alert('no more elements!')
+					}
+				}
+			}
+			/**
+			 * 删除元素节点
+			 * @param {Object} _element
+			 */
+			function removeElement(_element) {
+				var _parentElement = _element.parentNode;
+				if(_parentElement) {
+					_parentElement.removeChild(_element);
+				}
+			}
+
+			var btn = document.getElementById('btn');
+
+			btn.addEventListener('click', eventHandler, false);
+
+			//			AddEventHandler(btn, 'click', eventHandler)
+			//
+			//			function AddEventHandler(element, event, eventHandler) {
+			//				if(element.attachEvent) {
+			//					element.attachEvent(event, eventHandler);
+			//				} else {
+			//					element.addEventListener(event, eventHandler, false);
+			//				}
+			//			}
+		</script>
+
+	</body>
+
+</html>

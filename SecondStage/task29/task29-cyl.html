@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.onOk {
+			color: #008000;
+		}
+		
+		.onError {
+			color: #FF0000;
+		}
+		
+		.ok {
+			border: solid 1px #008000;
+		}
+		
+		.error {
+			border: solid 1px #FF0000;
+		}
+	</style>
+
+	<body>
+		<form>
+			<label>账号</label><input id="nameInput" type="text" name="account"><input id="account-btn" type="button" value="验证"><br/>
+		</form>
+		<span id="account-warn">必填，长度为4~16个字符</span>
+
+		<!--<script src="jquery-3.1.0.min.js"></script>-->
+		<!--<script src="jquery-3.1.0.min.js"></script>-->
+		<script>
+			window.onload = function() {
+				var btn = document.getElementById("account-btn");
+				btn.addEventListener("click", nameValihandler, false);
+
+				function nameValihandler() {
+					var warnId = document.getElementById("account-warn");
+					//					if(warnId.classList.contains("onError")) {
+					//						warnId.classList.remove("onError");
+					//						document.getElementById("nameInput").classList.remove("error");
+					//					}
+
+					//				alert("handler");
+					var nameStr = document.getElementById("nameInput").value.trim();
+					//				console.log(typeof nameIn);
+					//					console.log(typeof nameStr);
+
+					//					var warnText = "";
+					var len = nameStr.length,
+						charCount = 0;
+					//					console.log(len);
+					if(len !== 0) {
+						//遍历字符串计算长度
+						for(var i = 0; i < len; i++) {
+							//						alert(nameStr.charAt(i));
+							if(nameStr.charAt(i).match(/[\u4e00-\u9fa5]/)) {
+								charCount = charCount + 2; //每个汉字，中文符号长度为2
+							} else {
+								charCount = charCount + 1; //每个英文字母、数字、英文符号长度为1
+							}
+						}
+						if(charCount < 4 || charCount > 16) {
+							var errorMsg = "长度为4~16表字符";
+							var warnId = document.getElementById("account-warn");
+							warnId.textContent = errorMsg;
+							warnId.className = "onError";
+							document.getElementById("nameInput").className = "error";
+						} else {
+							var okMsg = "名称格式正确";
+							//							document.getElementById("account-warn").textContent = okMsg;
+							var warnId = document.getElementById("account-warn");
+							warnId.textContent = okMsg;
+							warnId.className = "onOk";
+							document.getElementById("nameInput").className = "ok";
+
+						}
+					} else {
+						var errorMsg = "姓名不能为空";
+						var warnId = document.getElementById("account-warn");
+						warnId.textContent = errorMsg;
+						warnId.className = "onError";
+						document.getElementById("nameInput").className = "error";
+					}
+				}
+
+				function valCSS(isTrue) {
+					if(isTrue) {
+
+					}
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

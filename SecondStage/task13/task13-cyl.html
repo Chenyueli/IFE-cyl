@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>对JS、事件、DOM有个初体验</title>
+	</head>
+
+	<body>
+		<!--<form>-->
+		<label>请输入北京今天空气质量：<input id="aqi-input" type="text" value="请输入任意字符"></label>
+		<button id="button">确认填写</button>
+		<!--</form>-->
+		<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+		<!--<script src="../jquery-3.1.0.min.js"></script>-->
+		<script type="text/javascript">
+			//jquery
+			//						$(document).ready(
+			//								function() {
+			//									$('button').on('click', function() {
+			//										$('#aqi-display').text($('#aqi-input').val());
+			//									})
+			//			
+			//								}
+			//							)
+
+
+			//			js			
+			(function() {
+				function Show() {
+					var aqiDisplay = document.getElementById('aqi-display');
+					var aqiInput = document.getElementById('aqi-input');
+					aqiDisplay.textContent = aqiInput.value;
+				}
+				
+				var btn = document.getElementById('button');
+				if(btn.attachEvent) {
+					btn.attachEvent('click', Show);
+				} else {
+					btn.addEventListener('click', Show, false);
+				}
+			})();
+
+//			(function() {
+//				/*
+//				 在注释下方写下代码
+//				 给按钮button绑定一个点击事件
+//				 在事件处理函数中
+//				 获取aqi-input输入的值，并显示在aqi-display中
+//				 */
+//				//        alert("hei");
+//				function Show() {
+//					var aqiDisplay = document.getElementById('aqi-display');
+//					var aqiInput = document.getElementById('aqi-input');
+//					//            alert(aqiDisplay.firstChild.nodeValue);
+//					aqiDisplay.textContent = aqiInput.value;
+//					//            alert(aqiDisplay.textContent);
+//					//            alert(aqiDisplay.firstChild.nodeValue);
+//				}
+//
+//				var btn = document.getElementById('button');
+//				if(btn.attachEvent) {
+//					btn.attachEvent("click", Show);
+//				} else {
+//					btn.addEventListener('click', Show, false);
+//				}
+//
+//			})();
+		</script>
+	</body>
+
+</html>

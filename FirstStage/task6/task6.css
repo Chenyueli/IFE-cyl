@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    /*border:solid 1px red;*/
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#wrapper {
+    width: 980px;
+    height: 1386px;
+    /*border:1px solid #f23;*/
+}
+#container{
+    width:892px;
+    heigth:100%;
+    margin: 0 auto;
+    /*border:1px solid #f23;*/
+}
+
+#header{
+    position: relative;
+    border-bottom: 2px solid #938e8c;
+    /*border:3px solid red;*/
+}
+
+.ife-link {
+    position: relative;
+    width: 110px;
+    height: 61px;
+    background: #d45d5c;
+}
+
+.ife-link p {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #fff;
+    font-family: "SimHei";
+}
+
+.pub-time {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    font-size: 12px;
+    color: #d45d5c;
+    font-family: "SimHei";
+}
+/*------------------------主体----------------------------*/
+#main {
+    border-bottom: 1px solid #938e8c;
+}
+#div1 {
+    margin-top: 20px;
+    zoom: 1;  /*IE清除浮动*/
+    /*border: 1px solid #f40;*/
+    position:relative;
+}
+
+.div1-left {
+    position: relative;
+    float: left;
+    /*border: 1px solid #ccc;*/
+}
+#green {
+    width: 191px;
+    height: 301px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #a0c5ac;
+    opacity: 0.5; /*透明度*/
+}
+#red {
+    width: 191px;
+    height: 301px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #e5bac0;
+    opacity: 0.5; /*透明度*/
+}
+
+.div1-right {
+    width: 203px;
+    position:absolute;
+    top:0px;
+    right:0;
+    height:301px;
+    padding-top: 10px;
+    border-top: 2px solid #cc8091;
+    /*border:2px solid #cc8091;*/
+}
+
+.div1-right a {
+    font-size: 24px;
+    color: #000;
+    /*text-decoration: underline;*/
+}
+
+.div1-right > h2:first-letter {
+    font-size: 30px;
+}
+
+.div1-right .sub-dis {
+    font-size: 12px;
+    font-family: 楷体;
+    color: #676767;
+    line-height: 10px;
+    margin-top: 5px;
+}
+
+.div1-right .number-1 {
+    /*border:1px solid #ccc;*/
+    font-size: 116px;
+    color: #75b86b;
+    position: relative;
+    font-style: oblique;  /*倾斜*/
+    left: -20px;
+    margin-top: -12px;
+}
+
+.div1-right .bottom {
+    border: 1px solid #fff;
+    margin-top: -24px;
+}
+
+.div1-right .number-2 {
+    font-size: 55px;
+    color: #cc8091;
+    float: left;
+    /*border:1px solid #ccc;*/
+}
+
+.div1-right .sub-dis-1 > p:first-child {
+    font-size: 21px;
+    color: #cc8091;
+    margin-top: 18px;
+}
+
+.div1-right .sub-dis-1 > p:last-child {
+    font-size: 12px;
+    color: #676767;
+}
+
+/*------------------------------div2------------------------*/
+#div2 {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.div2 {
+    /*border:1px solid #ccc;*/
+    width: 200px;
+    padding-right: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #767777;
+    font-weight: bolder;
+    font-family: 宋体;
+    line-height: 16px;
+}
+
+.div2 a {
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 36px;
+}
+
+.div2-left a {
+    color: #418c59;
+}
+
+.div2-middle a {
+    color: #d2994f;
+}
+
+.div2-right a {
+    color: #cc7680;
+}
+
+.div2-right ul {
+    /*border:1px solid;*/
+    list-style-type: none;
+    margin-top: 10px;
+    line-height: 16px;
+}
+
+.div2-right ul i {
+    color: #cd4a48;
+    opacity: 0.7;
+}
+
+/*-----------------------------------------------div3-----------------------------------*/
+#div3 {
+    /*border:1px solid #ccc;*/
+    /*display: flex;*/
+    width:100%;
+    align-items:flex-end;
+    padding-bottom:20px;
+    /*justify-content: space-between;*/
+}
+
+.div3-left {
+    width: 400px; /*个人计算*/
+    float:left;
+    margin-right:20px;
+}
+
+.div3-left .head {
+    width: 415px;
+    padding-bottom:10px;
+    font-weight: bold;
+    /*border:1px solid #ccc ;*/
+    border-bottom: 2px solid #11456b;
+}
+
+.div3-left h2{
+    font-size: 42px;
+    font-family: 黑体;
+    color: #11456b;
+    line-height: 100%;
+    font-weight: bold;
+
+}
+
+.div3-left h2 > span {
+    font-size: 72px;
+    font-family: 黑体;
+    color: #f5e327;
+    font-style:oblique;
+}
+.div3-left h3 {
+    font-size: 33px;
+    font-family: 黑体;
+    color: #11456b;
+}
+.div3-left img {
+    float: right;
+    margin: 10px 0 10px 10px;
+    /*border: 1px solid #ccc;*/
+}
+
+.div3-left p {
+    font-size: 12px;
+    font-family: 宋体;
+    color: #767777;
+    line-height: 24px;
+    margin-top: 12px;
+    /*border:10px solid #ccc ;*/
+}
+
+.div3-left > p:first-letter {
+    font-size: 70px;
+    font-family: "Microsoft YaHei", 微软雅黑, serif;
+    color: #f5e327;
+    padding: 5px;
+    float: left;
+    line-height: 100%; /*----------------非常重要-----------*/
+    /*border:1px solid #ccc ;*/
+}
+
+.div3-right {
+    width: 458px;
+    float:right;
+}
+.div3-right > .top{
+    position:relative;
+    /*border:solid;*/
+
+}
+
+#front-tips{
+    width:458px;
+    height:61px;
+    float:left;
+    margin-top:-64px;
+    /*z-index: -1;*/
+    background: #a0c5ac;
+    opacity: 0.5; /*透明度*/
+
+}
+#front-tips > p{
+    font-size:26px;
+    color:#fff;
+    border-left:3px solid #72b16a;
+    padding-left:10px;
+    margin:10px 0 0 44px;
+    opacity: 1; /*透明度*/
+
+}
+#front-tips > p>span{
+    font-size:12px;
+    color:#72b16a;
+    padding-left:10px;
+    font-style:oblique;
+    /*margin:10px 0 0 44px;*/
+}
+
+#discription {
+    width: 458px;
+    /*height: 318px;*/
+    background: #fd8;
+    /*margin-top: -3px;*/
+    /*border: 1px solid #ccc;*/
+}
+#discription ul {
+    color:#10456b;
+    /*margin:20px 0 20px 40px;*/
+    padding: 20px 0 20px 40px;
+    line-height: 32px;
+    list-style-type: none;
+    /*border:1px solid #ccc ;*/
+}
+
+#discription li:before {/*画三角形*/
+    content: "";
+    display: inline-block;
+    margin-right:10px;
+    border-width: 0px 5px 10px 5px;
+    border-color: #fd8 #fd8 #10456b #fd8;
+    border-style: solid;
+    width: 0;
+}
+
+#discription .bottom {
+    display: flex;
+    align-items:center;
+    /*border:1px solid #000 ;*/
+}
+
+#discription .bottom .left {
+    width: 260px;
+    height: 160px;
+    background: #d45d5c;
+    color: #fff;
+    /*border:1px solid #000 ;*/
+}
+
+#word-1 {
+    font-size: 110px;
+    font-family: "microsoft yahei", 微软雅黑;
+    float: left;
+}
+
+#word23-box {
+    width: 60%;
+    float: left;
+    margin: 36px 0 0 5px;
+}
+
+#word-2 {
+    font-size: 21px;
+    font-family: SimHei, 黑体, serif;
+}
+
+#word-3 {
+    font-size: 12px;
+    font-family: SimHei, 黑体, serif;
+}
+
+#discription .bottom .right {
+    /*font-style: italic;*/ /*斜体*/
+    font-style: oblique;  /*倾斜*/
+    margin-top:-12px;
+    padding: 0 16px;
+    width: calc(459px - 260px - 20px);
+    font-size: 14px;
+    color: #5a5b5b;
+    line-height: 20px;
+    /*border: 1px solid #ccc;*/
+}

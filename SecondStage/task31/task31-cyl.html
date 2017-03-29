@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.hide {
+				display: none;
+				/*visibility: hidden;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<form id="perMsg">
+			<div id="idenSelect">
+				<input type="radio" name="identity" value = "std" id="iden-01" class="iden" checked="checked"><label>在校生</label>
+				<input type="radio" name="identity" value = "non-std" id="iden-02" class="iden"><label>非在校生</label>
+			</div>
+			<div id="i-01" class="std">
+				<label>学校</label>
+				<select name="province">
+					<option value="beijing">北京</option>
+					<option value="guizhou" selected>贵州</option>
+					<option value="shanghai">上海</option>
+					<option value="xiamen">厦门</option>
+				</select>
+				<select name="school">
+					<option value="遵义二中" class="guizhou">贵阳师范学院</option>
+					<option value="遵义师范中学" class="guizhou">遵义师范中学</option>
+					<option value="复旦大学" class="shanghai hide">复旦大学</option>
+					<option value="中山大学" class="shanghai hide">中山大学</option>
+					<option value="厦门大学" class="xiamen hide">厦门大学</option>
+					<option value="集美大学" class="xiamen hide">集美大学</option>
+					<option value="北京大学" class="beijing hide">北京大学</option>
+					<option value="清华大学" class="beijing hide">清华大学</option>
+					<option value="北京理工大学" class="beijing hide">北京理工大学</option>
+				</select>
+			</div>
+			<div id="i-02" class="non-std hide">
+				<label>就业单位</label><input size="20">
+			</div>
+		</form>
+		<script>
+			var idenSelect = document.getElementById("idenSelect");
+			var provSelect = document.forms[0].elements["province"];
+			var schoolSelect = document.forms[0].elements["school"];
+			linkage(provSelect, schoolSelect);
+
+			idenSelect.addEventListener("change", selectIdentity, false);
+			provSelect.addEventListener("change", selectProvince, false);
+//         console.log(document.getElementsByClassName("non-std"));
+			//
+			function selectIdentity(e) {
+				var chooses = document.getElementById("idenSelect").children;
+				for(var i = 0, len = chooses.length; i < len; i++) {
+					if(chooses[i].tagName.toLowerCase() === "input") {
+						if(chooses[i] === e.target) {
+							var showEle = document.getElementsByClassName(e.target.value)[0];
+//							var showEle = document.getElementById("i-" + e.target.id.slice(5));
+							showEle.classList.remove("hide");
+						} else {
+							var hideEle = document.getElementsByClassName(e.target.value)[0];
+//							var hideEle = document.getElementById("i-" + chooses[i].id.slice(5));
+							hideEle.classList.add("hide");
+						}
+					}
+				}
+			}
+
+			function selectProvince() {
+				linkage(provSelect, schoolSelect);
+			}
+			/**
+			 * 省份-学校关联 并显示在页面中
+			 * @param {Object} provElement 省份select元素
+			 * @param {Object} schoolElement 学校select元素
+			 * 使用条件：关联省份value值  = 学校class属性值 元素
+			 */
+			function linkage(provElement, schoolElement) {
+				var prov = provElement.options[provElement.selectedIndex].value;
+				var schools =  schoolElement.children;
+				var seleSchool = "";
+				for(var i=0,len=schools.length;i<len;i++){
+					if(schools[i].classList.contains(prov)){
+						seleSchool = (seleSchool==="") ? schools[i] : seleSchool;
+						schools[i].classList.remove("hide");
+					}else{
+						schools[i].classList.add("hide");
+					}
+				}
+				seleSchool.selected = true;
+			}
+		</script>
+	</body>
+
+</html>

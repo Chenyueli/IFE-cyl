@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style type="text/css">
+			#div {
+				width: 110px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id = "div" style=""></div>
+		<div id = "div1" style="width:100px;height:100px;background:red;"></div>
+		
+		
+		<script>
+			console.log(document.getElementById("div").style.width);
+			console.log(document.getElementById("div").getAttribute("style"));
+			console.log(document.getElementById("div1").getAttribute("style"));
+			console.log(document.getElementById("div1").style.width);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 40px;
+        }
+        .content-box {
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;/*Firefox*/
+            -wekit-box-sizing:content-box;/*safari*/
+            border: 5px solid #E6A43F;
+            background: blue;
+        }
+
+        .padding-box {
+            box-sizing: padding-box;
+            -moz-box-sizing: padding-box;
+            -wekit-box-sizing:padding-box;
+            border: 5px solid #186645;
+            background: red;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -wekit-box-sizing:border-box;
+            border: 5px solid #3DA3EF;
+            background: yellow;
+        }
+        p{
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="content-box">content-box</div>
+<div class="padding-box">padding-box</div>
+<div class="border-box">border-box</div>
+
+<p>question:谷歌浏览器padding-box和content-box未显未无差别</p>
+</body>
+</html>

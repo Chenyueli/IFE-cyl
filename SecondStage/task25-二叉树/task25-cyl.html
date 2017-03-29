@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>结合实际运用场景，综合练习二十二到二十四的学习</title>
+		<style>
+			/*div {
+				border: 1px solid blue;
+				margin: 5px;
+				padding: 20px;
+				float: left
+			}*/
+			
+			#wrap-plan {}
+			
+			.items>span {
+				display: inline-block;
+				margin: 15px 15px;
+			}
+			
+			.selected {
+				color: red;
+				/*border:1px solid red;*/
+				/*background: red;*/
+			}
+			
+			.folder {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<label>搜索</label>
+			<input type="text" id="input" value="第一天">
+		</div>
+		<div id="wrap-plan" class="wrapper">
+			<div class="items"><span class="fold-item">*</span><span class="content">第一天</span><input class="input-box"><span class="add-button">+</span><span class="del-button">-</span>
+				<div class="items"><span class="fold-item">*</span><span class="content">健身</span><input class="input-box"><span class="add-button">+</span><span class="del-button">-</span></div>
+
+				<div class="items"><span class="fold-item">*</span><span class="content">学习</span><input class="input-box"><span class="add-button">+</span><span class="del-button">-</span></div>
+
+			</div>
+			<div class="items"><span class="fold-item">*</span><span class="content">第二天</span><input class="input-box"><span class="add-button">+</span><span class="del-button">-</span></div>
+			<div class="items"><span class="fold-item">*</span><span class="content">第三天</span><input class="input-box"><span class="add-button">+</span><span class="del-button">-</span></div>
+		</div>
+		<script src="task25-cyl.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>对JS的判断、循环、数组等有个初体验</title>
+	</head>
+
+	<body>
+
+		<h3>污染城市列表</h3>
+		<ul id="aqi-list">
+			<!--   
+    <li>第一名：福州（样例），10</li>
+  	<li>第二名：福州（样例），10</li> -->
+		</ul>
+
+		<script type="text/javascript">
+			var aqiData = [
+				["北京", 90],
+				["上海", 50],
+				["福州", 10],
+				["广州", 50],
+				["成都", 90],
+				["西安", 100]
+			];
+
+			(function() {
+
+				/*
+				在注释下方编写代码
+				遍历读取aqiData中各个城市的数据
+				将空气质量指数大于60的城市显示到aqi-list的列表中
+				*/
+				//				var x=[1,2,3,4,8,7];
+				//				alert(x);
+
+				//				x.sort(function(a,b){
+				////					return b-a;
+				//					return a-b;
+				//				})
+				//				alert(x);
+
+				aqiData.sort(function(a, b) {
+					return b[1] - a[1];
+				})
+				var listID = document.getElementById('aqi-list');
+				var numChinese = ['一', '二', '三', '四', '五', '六'];
+				for(index in aqiData) {
+					if(aqiData[index][1] > 60) {
+						var newEl = document.createElement('li');
+						var newText = document.createTextNode('第' + numChinese[index] + '名 : ' + aqiData[index][0] + ' : ' + aqiData[index][1]);
+						newEl.appendChild(newText);
+						listID.appendChild(newEl);
+					}
+				}
+
+				//				var selectedData = [];
+				//				var j = 0;
+				////				alert(aqiData.length);
+				//				for(var i = 0; i < aqiData.length; i++) {
+				//					if(aqiData[i][1] <= 60) {
+				//						delete aqiData[i];
+				//						//		aqiData[i] = [];
+				//						//		aqiData.pop();
+				//
+				//					} else {
+				//						selectedData[j] = aqiData[i];
+				//						j++;
+				//					}
+				//				}
+				////				alert(selectedData);
+				////
+				////				alert(aqiData);
+				////				alert(selectedData.length);
+				////				alert(aqiData.length); //delete数组长度不变，删除后用for-in遍历元素才可用
+				////				for(var i = 0; i < aqiData.length; i++) {
+				////					alert(aqiData[i]);
+				////				}
+				//
+				////				for(index in aqiData) {
+				////					alert(aqiData[index]);
+				////				}
+				////				
+				//				//render data
+				//				var newEl = '';
+				//     			var arr = ["一","二","三","四","五"];
+				//				
+				//				for(index in aqiData) {
+				//					//方法一  DOM操作更新元素内容
+				////					var newEl = document.createElement('li');
+				////					var newText = document.createTextNode(aqiData[index][0]+' : '+aqiData[index][1]);
+				////					newEl.appendChild(newText);
+				////					var ulPosition = document.getElementById('aqi-list');
+				////					ulPosition.appendChild(newEl);
+				//					
+				//					//方法二  innerHTML属性修改元素内容
+				//					newEl = newEl  + '<li>第'+arr[index]+'名 ：'+ aqiData[index][0]+' : '+aqiData[index][1] +'</li><br/>';
+				//					
+				////					alert(newEl);
+				////					alert(aqiData[index]);
+				//				}
+				////					alert(newEl);
+				//				
+				//				var ulPosition = document.getElementById('aqi-list');
+				//				ulPosition.innerHTML = newEl;
+
+			})();
+		</script>
+	</body>
+
+</html>
